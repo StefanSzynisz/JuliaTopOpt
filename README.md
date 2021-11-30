@@ -12,3 +12,6 @@ We use xxx for regular matrices in concept testing but sparse matrices are used 
 
 # Example of image insertion
 ![A test image](docs/images/example_drawing.svg)
+*image_caption*
+
+More text goes here ...
