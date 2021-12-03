@@ -10,6 +10,9 @@ We use xxx for regular matrices in concept testing but sparse matrices are used 
 | Header      | Title       |
 | Paragraph   | Text        |
 
+# Example of LaTeX
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 # top88.m Deconstruction
 | Notes/Annotations |
 | :---------------- |
