@@ -58,7 +58,7 @@ function top88(nelx,nely,volfrac,penal,rmin,ft)
         # FE-Analysis
         sK = reshape(KE[:]*(Emin.+xPhys[:]'.^penal*(E0-Emin)),64*nelx*nely,1)
         K = sparse(vec(iK),vec(jK),vec(sK)); K = (K+K')/2
-        U[freedofs] = Matrix(K[freedofs,freedofs])\Vector(F[freedofs])
+        U[freedofs] = cholesky(K[freedofs,freedofs])\Vector(F[freedofs])
         # Objective Function and Sensitivity Analysis
         ce = reshape(sum((U[edofMat]*KE).*U[edofMat],dims=2),nely,nelx)
         c = sum(sum((Emin.+xPhys.^penal*(E0-Emin)).*ce))
