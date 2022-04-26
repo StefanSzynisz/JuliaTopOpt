@@ -1,6 +1,7 @@
 # JuliaTopOpt
 Topology Optimization using Julia Programming language
 
+<!---
 # Matrices
 We use xxx for regular matrices in concept testing but sparse matrices are used for production code.
 
@@ -12,6 +13,7 @@ We use xxx for regular matrices in concept testing but sparse matrices are used 
 
 # Example of LaTeX
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+--->
 
 # top88.m Deconstruction
 | Notes/Annotations |
@@ -44,8 +46,8 @@ We use xxx for regular matrices in concept testing but sparse matrices are used 
 | 36    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iH(k) = e1; | Place element 1 number in iH |
 | 37    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jH(k) = e2; | Place element 2 number in jH |
 | 38    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sH(k) = max(0,rmin-sqrt((i1-i2)^2+(j1-j2)^2)); | Place corresponding weight value, H<sub>ei</sub> in sH |
-| 43    | H = sparse(iH,jH,sH); | Create filtering weight matrix using sparse function<br /> [nelx\*nely\*(2(&lceil;rmin&rceil;-1)+1)<sup>2</sup> x nelx\*nely\*(2(&lceil;rmin&rceil;-1)+1)<sup>2</sup>] |
-| 44    | Hs = sum(H,2); | Hs = column vector containing the sum of each row of the H matrix<br /> [nelx\*nely x nelx\*nely] |
+| 43    | H = sparse(iH,jH,sH); | Create filtering weight matrix using sparse function<br /> [nelx\*nely x nelx\*nely] |
+| 44    | Hs = sum(H,2); | Hs = column vector containing the sum of each row of the H matrix<br /> [nelx\*nely x 1] |
 | 46    | x = repmat(volfrac,nely,nelx); | Create matrix containing density values associated to each mesh cell<br /> [nely x nelx] |
 | 47    | xPhys = x; | xPhys is a copy of x used to represent the physical mesh densities after filtering<br /> [nely x nelx] |
 | 48    | loop = 0; | Initialise loop count |
@@ -77,8 +79,11 @@ We use xxx for regular matrices in concept testing but sparse matrices are used 
 | 84-85 | fprintf(' It.:%5i Obj.:%11.4f Vol.:%7.3f ch.:%7.3f\n',loop,c, ...<br />&nbsp;&nbsp;mean(xPhys(:)),change); | Print the iteration number, objective function (compliance) value, volume fraction (this should be unchanged throughout the optimisation process), and change = L<sup>&infin;</sup> norm |
 | 87    | colormap(gray); imagesc(1-xPhys); caxis([0 1]); axis equal; axis off; drawnow; | Plot the design (xPhys matrix) as a greyscale image |
 | 88    | end | End function |
+
+<!---
 # Example of image insertion
 ![A test image](docs/images/example_drawing.svg)
 *image_caption*
 
 More text goes here ...
+--->
