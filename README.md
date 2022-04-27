@@ -105,11 +105,11 @@ More text goes here ...
 
 # volfrac
 Varying volfrac changes the amount of material occupying the global domain:<br />
-![25% material](docs/images/MBB_100_300_0.25_ft1)
+![25% material](docs/images/MBB_100_300_0.25_ft1.png)
 *volfrac = 0.25*
-![50% material](docs/images/MBB_100_300_0.50_ft1)
+![50% material](docs/images/MBB_100_300_0.50_ft1.png)
 *volfrac = 0.50*
-![75% material](docs/images/MBB_100_300_0.75_ft1)
+![75% material](docs/images/MBB_100_300_0.75_ft1.png)
 *volfrac = 0.75*
 
 # rmin
