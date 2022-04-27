@@ -115,3 +115,4 @@ Varying volfrac changes the amount of material occupying the global domain:<br /
 # rmin
 rmin defines the radius (in no. of cells) used to formulate the weighting values used in filtering the mesh. Smaller rmin values encourage the formulation of microstructural elements.<br />
 When rmin = 1, the filter is not active, thus checkerboard patterns will appear.<br />
+![Variable rmin](docs/images/reverseMBB_rmin.gif)
