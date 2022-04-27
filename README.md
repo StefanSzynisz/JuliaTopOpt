@@ -1,5 +1,19 @@
 # JuliaTopOpt
-Topology Optimization using Julia Programming language
+Topology Optimization with the Julia Programming Language<br />
+The principal code, top88_ES.jl can be used to perform structural topology optimisation using the SIMP method for 2D elastic elements in plane stress for a Cartesian mesh.<br />
+The code is called using the following inputs:<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;top88_ES(nelx,nely,volfrac,penal,rmin,ft)<br />
+<br />
+Where:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nelx = number of elements in the x-direction<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nely = number of elements in the y-direction<br />
+&nbsp;&nbsp;&nbsp;&nbsp;volfrac = the volume fraction of material in the global domain<br />
+&nbsp;&nbsp;&nbsp;&nbsp;penal = the SIMP penalisation factor<br />
+&nbsp;&nbsp;&nbsp;&nbsp;rmin = the filtering radius<br />
+&nbsp;&nbsp;&nbsp;&nbsp;ft = 1 to select the sensitivity filter, 2 to select the density filter<br />
+<br />
+A detailed deconstruction of the principal code is shown below
 
 <!---
 # Matrices
@@ -88,3 +102,16 @@ We use xxx for regular matrices in concept testing but sparse matrices are used 
 
 More text goes here ...
 --->
+
+# volfrac
+Varying volfrac changes the amount of material occupying the global domain:<br />
+![25% material](docs/images/MBB_100_300_0.25_ft1)
+*volfrac = 0.25*
+![50% material](docs/images/MBB_100_300_0.50_ft1)
+*volfrac = 0.50*
+![75% material](docs/images/MBB_100_300_0.75_ft1)
+*volfrac = 0.75*
+
+# rmin
+rmin defines the radius (in no. of cells) used to formulate the weighting values used in filtering the mesh. Smaller rmin values encourage the formulation of microstructural elements.<br />
+When rmin = 1, the filter is not active, thus checkerboard patterns will appear.<br />
